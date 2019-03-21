@@ -1,0 +1,17 @@
+#page-wrapper {
+    width: 100%;        
+    /* padding: 0; */
+    background-color: #fff;
+}
+
+@media(min-width:768px) {
+    #wrapper {
+        padding-left: 225px;
+        margin-left: 246px;
+    }
+
+    #page-wrapper {
+        padding: 22px 10px;
+        margin-left: 246px;
+    }
+}

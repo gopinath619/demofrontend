@@ -1,0 +1,49 @@
+<table class="table table-bordered">
+    <thead>
+      <tr>
+   <th>Firstname</th>
+    <th>Lastname</th>
+        <th>Mobile</th>
+        <th>Gender</th>
+        <th>passport</th>
+        <th>Email</th>
+        <th>country</th>
+        <th>state</th>
+         <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dt of getveiwList">
+        <td>
+          {{dt.firstName}}
+        </td>
+        <td>
+          {{dt.lastname}}
+        </td>
+         <td>
+          {{dt.phone}}
+        </td>
+         <td>
+          {{dt.gender}}
+        </td>
+         <td>
+          {{dt.check}}
+        </td>
+         <td>
+          {{dt.email}}
+        </td>
+         <td>
+          {{dt.country}}
+        </td>
+         <td>
+          {{dt.state}}
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)=delete(dt.phone)>Delete</button>
+          <button class="btn btn-primary" (click)=edit(dt)>Edit</button>
+        </td>
+      </tr>
+      
+     
+    </tbody>
+  </table>

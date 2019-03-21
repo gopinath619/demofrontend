@@ -1,0 +1,46 @@
+<header>
+	<h1>Contact us</h1>
+</header>
+
+<div id="form">
+
+<div class="fish" id="fish"></div>
+<div class="fish" id="fish2"></div>
+<form [formGroup]="conctusForm" id="waterform"  (ngSubmit)="contactus()">
+<div class="formgroup" id="name-form">
+    <label for="name">Your name*</label>
+    <p [ngClass]="{ 'has-error': isSubmitted && formControls.firstName.errors }">
+    <input type="text" id="name" name="name" formControlName="firstName" />
+</p>
+<div *ngIf="isSubmitted && formControls.firstName.errors" class="help-block">
+      <div *ngIf="formControls.firstName.errors.required">Name is required</div>
+       <p *ngIf="formControls.firstName.errors.maxlength || formControls.firstName.errors.minlength">Adharcard number should be in valid format.</p>
+    </div>
+</div>
+
+<div class="formgroup" id="email-form">
+    <label for="email">Your e-mail*</label>
+     <p [ngClass]="{ 'has-error': isSubmitted && formControls.emailAddress.errors }">
+    <input type="email" id="email" name="email" formControlName="emailAddress" />
+</p>
+    <div *ngIf="isSubmitted && formControls.emailAddress.errors" class="help-block">
+      <div *ngIf="formControls.emailAddress.errors.required">emailAddress is required</div>
+       <p *ngIf="formControls.emailAddress.errors.pattern">emailAddress number should be in valid format.</p>
+    </div>
+</div>
+
+<div class="formgroup" id="message-form">
+    <label for="message">Your message</label>
+    <!-- <p [ngClass]="{ 'has-error': isSubmitted && formControls.Messages.errors }"> -->
+    <textarea id="message" name="message" formControlName="Messages"></textarea>
+<!-- </p> -->
+    
+</div>
+<div *ngIf="isSubmitted && formControls.Messages.errors" class="help-block">
+      <div *ngIf="formControls.Messages.errors.required">minimum 150 characters required</div>
+       <p *ngIf="formControls.Messages.errors.minlength">minimum 150 characters are required.</p>
+    </div>
+
+	<input type="submit" value="Send your message!" />
+</form>
+</div>

@@ -1,0 +1,48 @@
+<div class="container">
+
+  <h2 class="text-center">Edit User</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+      <div class="col-md-6">
+   
+
+    <div class="form-group">
+      <label for="firstName">First Name:</label>
+      <input formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name:</label>
+      <input formControlName="lastname" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+    </div>
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" formControlName="email" placeholder="Email" name="email" class="form-control" id="email">
+      </div>
+    </div>
+    
+        <div class="col-md-6">
+            <div class="form-group">
+              <label for="email">country</label>
+              <input type="email" formControlName="country" placeholder="Email" name="email" class="form-control" id="email">
+            </div>
+        
+            <div class="form-group">
+              <label for="firstName">state:</label>
+              <input formControlName="state" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+            </div>
+        
+            <div class="form-group">
+              <label for="lastName">gender:</label>
+              <input type="radio" formControlName="gender" value="male"  name="gender">Male
+              <input type="radio" formControlName="gender" value="female"  name="gender">Female
+            </div>
+            <div class="form-group">
+                <label for="lastName">Do you have passPort:</label>
+                <input type="checkbox" formControlName="check">YES
+                <input type="checkbox" formControlName="check1">NO
+              </div>
+            </div>
+    <button class="btn btn-success">Update</button>
+  </form>
+
+</div>

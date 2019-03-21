@@ -1,0 +1,28 @@
+<form class="example-form" [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+  <mat-form-field class="example-full-width">
+
+    <input type="text" placeholder="search state" aria-label="Number" matInput [formControl]="myControl" 
+    [matAutocomplete]="auto" formControlName="countr" (keyup)="updated()" [(ngModel)]="data">
+    
+    <mat-autocomplete #auto="matAutocomplete">
+       
+      <mat-option (onSelectionChange)="selected(option.id)"  *ngFor="let option of options" [value]="option.name"  >
+        {{option.name}}
+      </mat-option>
+      
+    </mat-autocomplete>
+ 
+  </mat-form-field><br>
+  <mat-form-field>
+  <mat-select  placeholder="search state" formControlName="stat">
+  	 <mat-option value="0">--Select--</mat-option>
+    <mat-option *ngFor="let state of states" value= {{state.id}}>{{state.name}}</mat-option>
+  </mat-select>
+</mat-form-field>
+ <div>
+                          <button class="btn btn-primary text-center" style="margin: 10px;" type="submit">Login</button>
+                          
+                      </div>
+</form>
+
+<h5>Search for John, jenny, Jonson</h5>
